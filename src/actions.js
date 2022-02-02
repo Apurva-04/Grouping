@@ -13,7 +13,7 @@ export const setSearchField=(text)=>{
 }
 export const requestRobots=(dispatch)=>{
 	dispatch({type: REQUEST_ROBOTS_PENDING});
-	fetch('http://localhost:5000/groups')
+	fetch('https://in-groups.herokuapp.com/groups')
 		.then((response)=>{
 			return response.json();
 		}).then((data)=>dispatch({type:REQUEST_ROBOTS_SUCCESS,payload: data}))

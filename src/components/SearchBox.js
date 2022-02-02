@@ -13,7 +13,7 @@ const SearchBox=(p)=>{
 			alert("Please enter a place");
 			return;
 		}
-		fetch('http://localhost:5000/groups/createGroup',{
+		fetch('https://in-groups.herokuapp.com/groups/createGroup',{
             method: 'post',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({
