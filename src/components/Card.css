@@ -1,0 +1,16 @@
+#robo{
+	cursor: pointer;
+	text-align: center;
+	border-radius: 10px;
+	box-shadow: 2px 2px 4px 1px #1f8f9f;
+	/*background-image: linear-gradient(180deg,pink 30%,purple 80%);*/
+	background-color: rgba(40,240,214,0.8);
+	transition: all 0.1s linear;
+}
+#robo:hover{
+	transform: scale(1.03);
+}
+img{
+	height: 200px;
+	width: 200px;
+}

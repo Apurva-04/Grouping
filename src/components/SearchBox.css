@@ -1,0 +1,25 @@
+#form{
+	text-align: center;
+}
+input{
+	border-color: none;
+	border-radius: 6px;
+	font-size: 16px;
+	padding: 6px;
+	margin: 10px;
+}
+button{
+	margin: 6px;
+	background-color: rgba(40,240,200,0.8);
+	border: none;
+	color: black;
+	font-size: 16px;
+	padding: 10px 100px;
+	margin: 10px;
+	transition: all 0.05 linear;
+}
+button:hover{
+	cursor: pointer;
+	background-color: rgba(50,250,220,1);
+	transform: scale(1.01);
+}
