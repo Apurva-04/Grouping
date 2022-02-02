@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-
+import logo from './logo.png';
 import {connect} from 'react-redux';
 import {setSearchField,requestRobots} from '../actions.js';
 
@@ -48,6 +48,7 @@ class App extends React.Component{
 		else
 			return(
 				<div>
+					<img src={logo} id="logo" alt="logo"/>
 					<h1>Find your group</h1>
 					<SearchBox searchChange={onSearchChange} requestRobots={this.props.onRequestRobots} searchField={this.props.searchField}/>
 					<ErrorBoundary>

@@ -17,3 +17,9 @@ html, body {
 	user-select: none;
 	color: #5D5D69
 }
+#logo{
+	position: absolute;
+	margin: -20px -10px;
+	height: 100px;
+	width: 100px;
+}
