@@ -29,7 +29,7 @@ const SearchBox=(p)=>{
 	}
 	return(
 		<div id="form">
-			<img class="im right" src={img} alt="Image"/>
+			<img className="im right" src={img} alt="im"/>
 			<h2> Filters </h2>
 			<label>Age :</label>
 			<input type="number"/>
