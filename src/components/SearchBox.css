@@ -1,5 +1,25 @@
 #form{
-	text-align: center;
+	color: white;
+	background-image: linear-gradient(to bottom right, #005ff1, #f090ff);
+	font-size: 1.17647rem;
+    font-weight: 300;
+    line-height: 1.70588rem;
+}
+label{
+	padding: 0px 20px;
+}
+#form p{
+	color: white;
+	padding: 5px 10px;
+}
+#form h2{
+	color: white;
+	padding: 10px 10px;
+	border-bottom: 1px solid white;
+	background-color: rgba(50,50,150,0.8);
+}
+#checkbox{
+	margin: 10px 30px;
 }
 input{
 	border-color: none;
@@ -22,4 +42,27 @@ button:hover{
 	cursor: pointer;
 	background-color: rgba(50,250,220,1);
 	transform: scale(1.01);
+}
+/*/////////////////////////////////////////////////////////*/
+.image{
+  float: right;
+  height: 450px;
+  width: 480px;
+}
+@media screen and (max-width: 1200px) {
+	.image{
+	    display: none;
+	}
+}
+#newBtn{
+	background-color: green;
+	display: inline;
+	padding: 10px 10px;
+	margin: 0px 50px;
+	border: 1px solid black;
+}
+#newBtn:hover{
+	cursor: pointer;
+	background-color: darkgreen;
+	border-color: white;
 }

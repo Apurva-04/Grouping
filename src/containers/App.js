@@ -7,7 +7,6 @@ import {setSearchField,requestRobots} from '../actions.js';
 import SearchBox from '../components/SearchBox.js';
 import CardGen from '../components/CardGen.js';
 //import { robots } from './robots';
-import Scroll from '../components/Scroll.js';
 import ErrorBoundary from '../components/ErrorBoundary.js';
 
 const mapStateToProps=(state)=>{
@@ -34,22 +33,26 @@ class App extends React.Component{
 		//const {robots}=this.state;
 		const {searchField, onSearchChange, robots, isPending}=this.props;
 		const filteredRobots= robots.filter((robot)=>{
-			return robot.name.toLowerCase().includes(searchField.toLowerCase());
+			return robot.place.toLowerCase().includes(searchField.toLowerCase());
 		});
 		if(isPending)
-			return <h1> Loading </h1>;
-		else if(robots.length==0)
-			return <h1>error</h1>;
+			return <h1> Loading ... </h1>;
+		else if(robots.length===0)
+			return (
+				<div>
+					<h1>Find your group</h1>
+					<SearchBox searchChange={onSearchChange}/>
+					<h2 style={{textAlign: "center"}}>No groups yet</h2>
+				</div>
+			)
 		else
 			return(
 				<div>
-					<h1>ROBOFRIENDS</h1>
-					<SearchBox searchChange={onSearchChange}/>
-					<Scroll>
-						<ErrorBoundary>
-							<CardGen robots={filteredRobots}/>
-						</ErrorBoundary>
-					</Scroll>
+					<h1>Find your group</h1>
+					<SearchBox searchChange={onSearchChange} requestRobots={this.props.onRequestRobots} searchField={this.props.searchField}/>
+					<ErrorBoundary>
+						<CardGen robots={filteredRobots}/>
+					</ErrorBoundary>
 				</div>
 			);
 	}

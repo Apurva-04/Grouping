@@ -5,10 +5,15 @@ font-weight: normal;
 src: local('SEGA LOGO FONT'), url('SEGA.woff') format('woff');
 }
 h1{
-	font-size: 50px;
-	color: rgba(60,230,200,0.9);
+	margin: 15px 10px;
+	font-size: 40px;
+	font-weight: bold;
 	text-align: center;
-	font-family: 'SEGA LOGO FONT';
-	font-weight: normal;
 	font-style: normal;
+}
+html, body {
+	justify-content: center;
+	font-family: "Gotham",Helvetica,Arial,sans-serif;
+	user-select: none;
+	color: #5D5D69
 }
