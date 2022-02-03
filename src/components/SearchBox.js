@@ -13,11 +13,27 @@ const SearchBox=(p)=>{
 			alert("Please enter a place");
 			return;
 		}
+		let obj = {
+			place: p.searchField,
+			upper_budget:p.f.upper_budget,
+			lower_budget:p.f.lower_budget,
+			upper_age:p.f.age,
+			lower_age:p.f.age,
+			lower_date:p.f.lower_date,
+			upper_date:p.f.upper_date
+		}
+		console.log(obj);
 		fetch('https://in-groups.herokuapp.com/groups/createGroup',{
             method: 'post',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({
-            	place: p.searchField
+            	place: p.searchField,
+				upper_budget:p.f.upper_budget,
+				lower_budget:p.f.lower_budget,
+				upper_age:p.f.age,
+				lower_age:p.f.age,
+				lower_date:p.f.lower_date,
+				upper_date:p.f.upper_date
             })
         })
         .then(res=>res.json())
@@ -44,7 +60,7 @@ const SearchBox=(p)=>{
 		  	<br/>
 			<label>Budget :</label>
 			<br/>
-			<form>
+			<form onChange={p.onSearchChange1}>
 				<div id="debt-amount-slider">
 					<input type="radio" name="debt-amount" id="1" value="1" required/>
 					<label for="1" data-debt-amount="< ₹10k"></label>

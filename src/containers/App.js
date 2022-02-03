@@ -31,14 +31,48 @@ class App extends React.Component{
 			lower_date: '',
 			upper_date: '',
 			age: '',
-			budget: ''
+			lower_budget: '',
+			upper_budget:''
 		}
 	}
 	onSearchChange1=(e)=>{
 		console.log(e.target.value);
-		this.setState({
-			[e.target.name]: e.target.value
-		})
+		
+		if(e.target.name==="debt-amount"){
+			var lb,ub;
+			console.log(e.target.value);
+			if(e.target.value==='1'){
+				lb = 0;
+				ub = 10;
+			}
+			else if(e.target.value==='2'){
+				lb = 10;
+				ub = 25;
+			}
+			else if(e.target.value==='3'){
+				lb = 25;
+				ub = 50;
+			}
+			else if(e.target.value==='4'){
+				lb = 50;
+				ub = 100;
+			}
+			else if(e.target.value==='5'){
+				lb = 100;
+				ub = 200;
+			}
+			console.log(ub);
+			this.setState({
+				lower_budget: lb,
+				upper_budget: ub
+			})
+		}
+		else{
+			this.setState({
+				[e.target.name]: e.target.value
+			})
+		}
+		console.log(this.state);
 	}
 	componentDidMount(){
 		this.props.onRequestRobots();
@@ -56,7 +90,8 @@ class App extends React.Component{
 			return (
 				<div>
 					<h1>Find your group</h1>
-					<SearchBox searchChange={onSearchChange}/>
+					<SearchBox searchChange={onSearchChange} onSearchChange1={this.onSearchChange1} requestRobots={this.props.onRequestRobots} searchField={this.props.searchField} f = {this.state}/>
+				
 					<h2 style={{textAlign: "center"}}>No groups yet</h2>
 				</div>
 			)
@@ -65,7 +100,7 @@ class App extends React.Component{
 				<div>
 					<img src={logo} id="logo" alt="logo"/>
 					<h1>Find your group</h1>
-					<SearchBox searchChange={onSearchChange} onSearchChange1={this.onSearchChange1} requestRobots={this.props.onRequestRobots} searchField={this.props.searchField}/>
+					<SearchBox searchChange={onSearchChange} onSearchChange1={this.onSearchChange1} requestRobots={this.props.onRequestRobots} searchField={this.props.searchField} f = {this.state}/>
 					<ErrorBoundary>
 						<CardGen robots={filteredRobots}/>
 					</ErrorBoundary>
