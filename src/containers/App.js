@@ -90,8 +90,8 @@ class App extends React.Component{
 			return (
 				<div>
 					<h1>Find your group</h1>
+
 					<SearchBox searchChange={onSearchChange} onSearchChange1={this.onSearchChange1} requestRobots={this.props.onRequestRobots} searchField={this.props.searchField} f = {this.state}/>
-				
 					<h2 style={{textAlign: "center"}}>No groups yet</h2>
 				</div>
 			)
