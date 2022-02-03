@@ -25,7 +25,21 @@ const mapDispatchToProps=(dispatch)=>{
 }
 
 class App extends React.Component{
-
+	constructor(props){
+		super(props);
+		this.state={
+			lower_date: '',
+			upper_date: '',
+			age: '',
+			budget: ''
+		}
+	}
+	onSearchChange1=(e)=>{
+		console.log(e.target.value);
+		this.setState({
+			[e.target.name]: e.target.value
+		})
+	}
 	componentDidMount(){
 		this.props.onRequestRobots();
 	}
@@ -33,7 +47,8 @@ class App extends React.Component{
 		//const {robots}=this.state;
 		const {searchField, onSearchChange, robots, isPending}=this.props;
 		const filteredRobots= robots.filter((robot)=>{
-			return robot.place.toLowerCase().includes(searchField.toLowerCase());
+			let r=robot.place.toLowerCase().includes(searchField.toLowerCase());
+			return r;
 		});
 		if(isPending)
 			return <h1> Loading ... </h1>;
@@ -50,7 +65,7 @@ class App extends React.Component{
 				<div>
 					<img src={logo} id="logo" alt="logo"/>
 					<h1>Find your group</h1>
-					<SearchBox searchChange={onSearchChange} requestRobots={this.props.onRequestRobots} searchField={this.props.searchField}/>
+					<SearchBox searchChange={onSearchChange} onSearchChange1={this.onSearchChange1} requestRobots={this.props.onRequestRobots} searchField={this.props.searchField}/>
 					<ErrorBoundary>
 						<CardGen robots={filteredRobots}/>
 					</ErrorBoundary>

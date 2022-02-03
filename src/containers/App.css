@@ -15,7 +15,8 @@ html, body {
 	justify-content: center;
 	font-family: "Gotham",Helvetica,Arial,sans-serif;
 	user-select: none;
-	color: #5D5D69
+	color: #5D5D69;
+	background-color: #f0f0f0;
 }
 #logo{
 	position: absolute;

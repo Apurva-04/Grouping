@@ -29,7 +29,6 @@ input{
 	margin: 10px;
 }
 button{
-	margin: 6px;
 	background-color: rgba(40,240,200,0.8);
 	border: none;
 	color: black;
@@ -50,15 +49,16 @@ button:hover{
   width: 480px;
 }
 @media screen and (max-width: 1200px) {
-	.image{
+	.im{
 	    display: none;
 	}
 }
 #newBtn{
+	border-radius: 5px;
 	background-color: green;
-	display: inline;
+	display: inline-block;
 	padding: 10px 10px;
-	margin: 0px 50px;
+	margin: 0px 80px;
 	border: 1px solid black;
 }
 #newBtn:hover{
